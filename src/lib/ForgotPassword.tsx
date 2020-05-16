@@ -2,7 +2,7 @@ import React, { MouseEvent, FormEvent, ChangeEvent } from 'react';
 import { Box, Container, Link, TextField } from '@material-ui/core';
 import { useIntl } from 'react-intl';
 import FormTitle from './FormTitle';
-import { SubmitButton } from 'material-ui-basic-parts';
+import { MyButton } from 'material-ui-basic-parts';
 
 type Props = {
     authState: string;
@@ -35,11 +35,19 @@ const ForgotPassword: React.FC<Props> = (props) => {
         props.changeAuthState('signIn');
     };
 
+    const msgId = 'MUAA.ForgotPassword';
+    const msgIdTitle = msgId + '.Title';
+    const msgIdSignIn = msgId + '.SignIn';
+    const msgIdEmail = msgId + '.Email';
+    const msgIdSubmit = msgId + '.Submit';
     const content = (
-        <Container component="main" maxWidth="xs">
+        <Container data-testid={msgId} component="main" maxWidth="xs">
             <form onSubmit={handleSubmit}>
                 <Box display="flex" flexDirection="column" mt={8}>
-                    <FormTitle>Reset Your Password</FormTitle>
+                    <FormTitle
+                        data-testid={msgIdTitle}
+                        label={formatMessage({ id: msgIdTitle, defaultMessage: 'Reset Your Password' })}
+                    />
                     <Box display="flex" justifyContent="center" fontWeight={600} color="error.main">
                         {props.error}
                     </Box>
@@ -49,19 +57,25 @@ const ForgotPassword: React.FC<Props> = (props) => {
                             type="email"
                             onChange={handleChangeValue('email')}
                             value={form.email}
-                            label="Email Address"
+                            label={formatMessage({ id: msgIdEmail, defaultMessage: 'Email Address' })}
                             variant="outlined"
                             required
                             fullWidth
-                            inputProps={{ 'data-testid': 'email' }}
+                            inputProps={{ 'data-testid': msgIdEmail }}
                         />
                     </Box>
-                    <Box width="100%" mt={4} mb={2} className="relative">
-                        <SubmitButton loading={props.loading} />
+                    <Box width="100%" mt={4} mb={2}>
+                        <MyButton
+                            type="submit"
+                            label={formatMessage({ id: msgIdSubmit, defaultMessage: 'Submit' })}
+                            color="primary"
+                            loading={props.loading}
+                            data-testid={msgIdSubmit}
+                        />
                     </Box>
                     <Box width="100%" my={2}>
-                        <Link data-testid="sign-in-link" href="#" variant="body2" onClick={handleSignIn}>
-                            {formatMessage({ id: 'MUIBP.goToSignIn', defaultMessage: 'Back to Sign in' })}
+                        <Link data-testid={msgIdSignIn} href="#" variant="body2" onClick={handleSignIn}>
+                            {formatMessage({ id: msgIdSignIn, defaultMessage: 'Back to Sign in' })}
                         </Link>
                     </Box>
                 </Box>
