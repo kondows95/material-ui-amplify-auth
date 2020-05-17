@@ -48,11 +48,13 @@ describe('Basic Usage', () => {
     });
 
     it('You can set label by Intl', () => {
+        //For <TextField> default label.
         const html = tLib.render.container.innerHTML;
-        expect(html).toContain('#MUAA.ForgotPassword.Title');
         expect(html).toContain('#MUAA.ForgotPassword.Email');
-        expect(html).toContain('#MUAA.ForgotPassword.SignIn');
-        expect(html).toContain('#MUAA.ForgotPassword.Submit');
+        //For textContent.
+        expect(tLib.get('MUAA.ForgotPassword.Title').textContent).toBe('#MUAA.ForgotPassword.Title');
+        expect(tLib.get('MUAA.ForgotPassword.SignIn').textContent).toBe('#MUAA.ForgotPassword.SignIn');
+        expect(tLib.get('MUAA.ForgotPassword.Submit').textContent).toBe('#MUAA.ForgotPassword.Submit');
     });
 
     it('You can set error message', () => {

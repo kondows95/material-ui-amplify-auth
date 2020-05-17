@@ -26,7 +26,7 @@ describe('Basic Usage', () => {
                         authState={'forgotPasswordReset'}
                         forgotPasswordSubmit={forgotPasswordSubmit}
                         loading={false}
-                        error={''}
+                        error={'MyError'}
                         email={'test@example.com'}
                     />
                 </IntlProvider>
@@ -39,6 +39,19 @@ describe('Basic Usage', () => {
         tLib.changeValue('MUAA.ForgotPasswordReset.Password', 'myPassword');
         tLib.click('MUAA.ForgotPasswordReset.Submit');
         expect(forgotPasswordSubmit).toHaveBeenCalledWith('test@example.com', '12345', 'myPassword');
+    });
+
+    it('You can set label by Intl', () => {
+        //For <TextField> default label.
+        const html = tLib.render.container.innerHTML;
+        expect(html).toContain('#MUAA.ForgotPasswordReset.Code');
+        //For textContent.
+        expect(tLib.get('MUAA.ForgotPasswordReset.Title').textContent).toBe('#MUAA.ForgotPasswordReset.Title');
+        expect(tLib.get('MUAA.ForgotPasswordReset.Submit').textContent).toBe('#MUAA.ForgotPasswordReset.Submit');
+    });
+
+    it('You can set error message', () => {
+        expect(tLib.render.container.innerHTML).toContain('MyError');
     });
 
     it('Snapshot', () => {
@@ -60,13 +73,13 @@ it('Defalt Intl labels', () => {
             </IntlProvider>
         )
     );
-    //For <TextField> default label.
     const html = tLib.render.container.innerHTML;
+    expect(html).toContain('Please confirm your email');
     expect(html).toContain('Confirmation Code');
     expect(html).toContain('New Password');
-    //For textContent.
-    expect(tLib.get('MUAA.ForgotPasswordReset.Title').textContent).toBe('Please confirm your email');
-    expect(tLib.get('MUAA.ForgotPasswordReset.Submit').textContent).toBe('Submit');
+    expect(html).toContain('Submit');
+    expect(html).toContain('Sign In');
+    expect(html).toContain('Forgot password?');
 });
 
 it('If authState is not forgotPasswordReset, return empty.', () => {

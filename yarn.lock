@@ -9071,10 +9071,10 @@ react-scripts@3.4.1:
   optionalDependencies:
     fsevents "2.1.2"
 
-react-testing-library-wrapper@^0.0.7:
-  version "0.0.7"
-  resolved "https://registry.yarnpkg.com/react-testing-library-wrapper/-/react-testing-library-wrapper-0.0.7.tgz#459ee56f7feec5ea7f02e3b930ab21f84d45efda"
-  integrity sha512-mvSRQkrDjn8oxACNJ6oWiU/dfsXnyPXtyfvQhscLqpCbr8yyQ+OQMiROvsdqiz0+PJL38LIzixq7zC6YzJSymg==
+react-testing-library-wrapper@^0.0.10:
+  version "0.0.10"
+  resolved "https://registry.yarnpkg.com/react-testing-library-wrapper/-/react-testing-library-wrapper-0.0.10.tgz#60ad6bb77e2d2b6ae94d073f5fc8760886df18aa"
+  integrity sha512-KlXVzi1lDdHDYJMssaCIBvkrXGweKGXw8/9riY7QLZWYhoDTWNIyk7deU5nADRkoCt860y8RqapBKwAqbgwQJg==
 
 react-transition-group@^4.4.0:
   version "4.4.1"
