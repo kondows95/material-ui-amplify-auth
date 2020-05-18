@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { IntlProvider } from 'react-intl';
 import { BrowserRouter } from 'react-router-dom';
-import { FormTitle, SignIn, SignUp, ConfirmSignUp, ForgotPassword, ForgotPasswordReset } from './lib/index';
+import { FormTitle, SignIn, SignUp, ConfirmSignUp, ForgotPassword, ForgotPasswordReset, Password } from './lib/index';
 
 const msgs = {
     'MUAA.SignIn.Title': '#MUAA.SignIn.Title',
@@ -96,10 +96,11 @@ function App(): React.ReactElement {
                 email={'test@example.com'}
             />
             <hr />
-
             <BrowserRouter>
                 <FormTitle label="MyFormTitle" />
             </BrowserRouter>
+            <hr />
+            <Password label="MyPassword" testId="MyPasswords" value="MyPassword" />
         </IntlProvider>
     );
 }

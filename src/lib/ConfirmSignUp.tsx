@@ -3,6 +3,7 @@ import { Box, Container, TextField, Link } from '@material-ui/core';
 import { useIntl } from 'react-intl';
 import FormTitle from './FormTitle';
 import { MyButton } from 'material-ui-basic-parts';
+import Password from './Password';
 
 type Props = {
     authState: string | null;
@@ -60,16 +61,11 @@ const ConfirmSignUp: React.FC<Props> = (props) => {
                     </Box>
 
                     <Box width="100%" my={2}>
-                        <TextField
+                        <Password
                             label={formatMessage({ id: msgIdPassword, defaultMessage: 'New Password' })}
-                            type="password"
-                            autoComplete="new-password"
-                            onChange={handleChangeValue('password')}
+                            testId={msgIdPassword}
                             value={form.password}
-                            variant="outlined"
-                            required
-                            fullWidth
-                            inputProps={{ 'data-testid': msgIdPassword }}
+                            onChange={handleChangeValue('password')}
                         />
                     </Box>
 

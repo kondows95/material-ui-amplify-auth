@@ -1,19 +1,9 @@
 import React, { MouseEvent, FormEvent, ChangeEvent } from 'react';
-import {
-    Box,
-    Container,
-    FormControl,
-    IconButton,
-    InputAdornment,
-    InputLabel,
-    Link,
-    OutlinedInput,
-    TextField,
-} from '@material-ui/core';
+import { Box, Container, Link, TextField } from '@material-ui/core';
 import { useIntl } from 'react-intl';
 import FormTitle from './FormTitle';
 import { MyButton } from 'material-ui-basic-parts';
-import { Visibility, VisibilityOff } from '@material-ui/icons';
+import Password from './Password';
 
 type Props = {
     authState: string;
@@ -27,17 +17,12 @@ const SignUp: React.FC<Props> = (props) => {
     const { formatMessage } = useIntl();
     type Form = { [key: string]: string };
     const [form, setForm] = React.useState<Form>({ email: '', password: '' });
-    const [isPasswordShown, setIsPasswordShown] = React.useState(false);
 
     type FormKey = 'email' | 'password';
     const handleChangeValue = (fieldName: FormKey) => (event: ChangeEvent<HTMLInputElement>): void => {
         const newForm = { ...form };
         newForm[fieldName] = event.currentTarget.value;
         setForm(newForm);
-    };
-
-    const handleClickShowPassword = (): void => {
-        setIsPasswordShown(!isPasswordShown);
     };
 
     const handleSubmit = (event: FormEvent): void => {
@@ -82,34 +67,12 @@ const SignUp: React.FC<Props> = (props) => {
                         />
                     </Box>
                     <Box width="100%" my={2}>
-                        <FormControl fullWidth={true} variant="outlined">
-                            <InputLabel htmlFor="standard-adornment-password" required>
-                                {formatMessage({ id: msgIdPassword, defaultMessage: 'Password' })}
-                            </InputLabel>
-                            <OutlinedInput
-                                id="standard-adornment-password"
-                                type={isPasswordShown ? 'text' : 'password'}
-                                value={form.password}
-                                autoComplete="current-password"
-                                onChange={handleChangeValue('password')}
-                                required
-                                fullWidth
-                                inputProps={{ 'data-testid': msgIdPassword }}
-                                endAdornment={
-                                    <InputAdornment position="end">
-                                        <IconButton
-                                            aria-label="toggle password visibility"
-                                            onClick={handleClickShowPassword}
-                                            edge="end"
-                                            data-testid={msgIdPassword + '.Visible'}
-                                        >
-                                            {isPasswordShown ? <Visibility /> : <VisibilityOff />}
-                                        </IconButton>
-                                    </InputAdornment>
-                                }
-                                labelWidth={70}
-                            />
-                        </FormControl>
+                        <Password
+                            label={formatMessage({ id: msgIdPassword, defaultMessage: 'Password' })}
+                            testId={msgIdPassword}
+                            value={form.password}
+                            onChange={handleChangeValue('password')}
+                        />
                     </Box>
                     <Box width="100%" mt={4} mb={2} className="relative">
                         <MyButton
