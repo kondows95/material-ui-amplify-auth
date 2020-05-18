@@ -2,29 +2,32 @@ import React from 'react';
 import '@testing-library/jest-dom/extend-expect';
 import TestLib from 'react-testing-library-wrapper';
 import { IntlProvider } from 'react-intl';
-import ForgotPasswordReset from '../lib/ForgotPasswordReset';
+import ConfirmSignUp from '../lib/ConfirmSignUp';
 
 let tLib: TestLib;
-let forgotPasswordSubmit: jest.Mock;
+let changeAuthState: jest.Mock;
+let confirmSignUp: jest.Mock;
 
 beforeEach(() => {
-    forgotPasswordSubmit = jest.fn();
+    changeAuthState = jest.fn();
+    confirmSignUp = jest.fn();
 });
 
 describe('Basic Usage', () => {
     const msgs = {
-        'MUAA.ForgotPasswordReset.Title': '#MUAA.ForgotPasswordReset.Title',
-        'MUAA.ForgotPasswordReset.Code': '#MUAA.ForgotPasswordReset.Code',
-        'MUAA.ForgotPasswordReset.Password': '#MUAA.ForgotPasswordReset.Password',
-        'MUAA.ForgotPasswordReset.Submit': '#MUAA.ForgotPasswordReset.Submit',
+        'MUAA.ConfirmSignUp.Title': '#MUAA.ConfirmSignUp.Title',
+        'MUAA.ConfirmSignUp.Code': '#MUAA.ConfirmSignUp.Code',
+        'MUAA.ConfirmSignUp.Password': '#MUAA.ConfirmSignUp.Password',
+        'MUAA.ConfirmSignUp.Submit': '#MUAA.ConfirmSignUp.Submit',
     };
     beforeEach(() => {
         tLib = new TestLib(
             (
                 <IntlProvider locale="en" messages={msgs}>
-                    <ForgotPasswordReset
-                        authState={'forgotPasswordReset'}
-                        forgotPasswordSubmit={forgotPasswordSubmit}
+                    <ConfirmSignUp
+                        authState={'confirmSignUp'}
+                        changeAuthState={changeAuthState}
+                        confirmSignUp={confirmSignUp}
                         loading={false}
                         error={'MyError'}
                         email={'test@example.com'}
@@ -35,19 +38,18 @@ describe('Basic Usage', () => {
     });
 
     it('Click submit button', () => {
-        tLib.changeValue('MUAA.ForgotPasswordReset.Code', '12345');
-        tLib.changeValue('MUAA.ForgotPasswordReset.Password', 'myPassword');
-        tLib.click('MUAA.ForgotPasswordReset.Submit');
-        expect(forgotPasswordSubmit).toHaveBeenCalledWith('test@example.com', '12345', 'myPassword');
+        tLib.changeValue('MUAA.ConfirmSignUp.Code', '12345');
+        tLib.changeValue('MUAA.ConfirmSignUp.Password', 'myPassword');
+        tLib.click('MUAA.ConfirmSignUp.Submit');
+        expect(confirmSignUp).toHaveBeenCalledWith('test@example.com', '12345');
     });
 
     it('You can set label by Intl', () => {
-        //For <TextField> default label.
         const html = tLib.render.container.innerHTML;
-        expect(html).toContain('#MUAA.ForgotPasswordReset.Code');
-        //For textContent.
-        expect(tLib.get('MUAA.ForgotPasswordReset.Title').textContent).toBe('#MUAA.ForgotPasswordReset.Title');
-        expect(tLib.get('MUAA.ForgotPasswordReset.Submit').textContent).toBe('#MUAA.ForgotPasswordReset.Submit');
+        expect(html).toContain('#MUAA.ConfirmSignUp.Title');
+        expect(html).toContain('#MUAA.ConfirmSignUp.Code');
+        expect(html).toContain('#MUAA.ConfirmSignUp.Password');
+        expect(html).toContain('#MUAA.ConfirmSignUp.Submit');
     });
 
     it('You can set error message', () => {
@@ -63,9 +65,10 @@ it('Defalt Intl labels', () => {
     tLib = new TestLib(
         (
             <IntlProvider locale="en">
-                <ForgotPasswordReset
-                    authState={'forgotPasswordReset'}
-                    forgotPasswordSubmit={forgotPasswordSubmit}
+                <ConfirmSignUp
+                    authState={'confirmSignUp'}
+                    changeAuthState={changeAuthState}
+                    confirmSignUp={confirmSignUp}
                     loading={false}
                     error={''}
                     email={'test@example.com'}
@@ -78,15 +81,17 @@ it('Defalt Intl labels', () => {
     expect(html).toContain('Confirmation Code');
     expect(html).toContain('New Password');
     expect(html).toContain('Submit');
+    expect(html).toContain('Resend code to test@example.com');
 });
 
 it('If authState is not forgotPasswordReset, return empty.', () => {
     tLib = new TestLib(
         (
             <IntlProvider locale="en">
-                <ForgotPasswordReset
+                <ConfirmSignUp
                     authState={'forgotPassword'}
-                    forgotPasswordSubmit={forgotPasswordSubmit}
+                    changeAuthState={changeAuthState}
+                    confirmSignUp={confirmSignUp}
                     loading={false}
                     error={''}
                     email={'test@example.com'}
