@@ -7,6 +7,7 @@ $ yarn material-ui-amplify-auth
 
 Also, you need to install the dependent packages.
 ```
+$ yarn add material-ui-basic-parts
 $ yarn add @material-ui/core @material-ui/icons
 $ yarn add react-intl
 $ yarn add react-router-dom @types/react-router-dom
