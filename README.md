@@ -17,13 +17,12 @@ $ yarn add react react-dom @types/react @types/react-dom
 See example codes in index.tsx<br />
 https://github.com/kondows95/material-ui-amplify-auth/blob/master/src/index.tsx
 
-
-Also, you can see "Basic Usage" in test.tsx<br />
-https://github.com/kondows95/material-ui-amplify-auth/tree/master/src/
-
 You can run example codes in your local environment<br />
 ```
 $ git clone https://github.com/kondows95/material-ui-amplify-auth.git
 $ yarn
 $ yarn start
 ```
+
+Also, you can see "Basic Usage" in "__tests__/***.test.tsx"<br />
+https://github.com/kondows95/material-ui-amplify-auth/tree/master/src/
