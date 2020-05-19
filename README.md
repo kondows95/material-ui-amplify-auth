@@ -2,7 +2,7 @@ This is a collection of React components that can be used commonly in multiple p
 
 # Install
 ```
-$ yarn add material-ui-basic-parts
+$ yarn material-ui-amplify-auth
 ```
 
 Also, you need to install the dependent packages.
@@ -14,5 +14,9 @@ $ yarn add react react-dom @types/react @types/react-dom
 ```
 
 # Usage
-See "Basic Usage" in test.tsx.<br />
-https://github.com/kondows95/material-ui-basic-parts/tree/master/src/__test__/
+See example<br />
+https://github.com/kondows95/material-ui-amplify-auth/blob/master/src/index.tsx
+
+
+Also, you can ee "Basic Usage" in test.tsx.<br />
+https://github.com/kondows95/material-ui-amplify-auth/tree/master/src/__tests__
