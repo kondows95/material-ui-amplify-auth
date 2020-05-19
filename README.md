@@ -2,7 +2,7 @@ This is a collection of React components that can be used commonly in multiple p
 
 # Install
 ```
-$ yarn material-ui-amplify-auth
+$ yarn add material-ui-amplify-auth
 ```
 
 Also, you need to install the dependent packages.
