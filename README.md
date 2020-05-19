@@ -25,4 +25,4 @@ $ yarn start
 ```
 
 Also, you can see "Basic Usage" in "\_\_tests\_\_/***.test.tsx"<br />
-https://github.com/kondows95/material-ui-amplify-auth/tree/master/src/\_\_tests\_\_/
+https://github.com/kondows95/material-ui-amplify-auth/tree/master/src/
