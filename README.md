@@ -18,7 +18,7 @@ See example codes in index.tsx<br />
 https://github.com/kondows95/material-ui-amplify-auth/blob/master/src/index.tsx
 
 
-Also, you can see "Basic Usage" in test.tsx.<br />
+Also, you can see "Basic Usage" in test.tsx<br />
 https://github.com/kondows95/material-ui-amplify-auth/tree/master/src/__tests__
 
 You can run example codes in your local environment<br />
