@@ -49,7 +49,7 @@ const SignUp: React.FC<Props> = (props) => {
                 <Box display="flex" flexDirection="column" mt={8}>
                     <FormTitle
                         data-testid={msgIdTitle}
-                        label={formatMessage({ id: msgIdTitle, defaultMessage: 'Sign In' })}
+                        label={formatMessage({ id: msgIdTitle, defaultMessage: 'Sign Up' })}
                     />
                     <Box display="flex" justifyContent="center" fontWeight={600} color="error.main">
                         {props.error}
@@ -78,7 +78,7 @@ const SignUp: React.FC<Props> = (props) => {
                     <Box width="100%" mt={4} mb={2} className="relative">
                         <MyButton
                             type="submit"
-                            label={formatMessage({ id: msgIdSubmit, defaultMessage: 'Sign In' })}
+                            label={formatMessage({ id: msgIdSubmit, defaultMessage: 'Sign Up' })}
                             color="primary"
                             loading={props.loading}
                             data-testid={msgIdSubmit}
