@@ -21,7 +21,7 @@ const msgs = {
     'MUAA.ConfirmSignUp.Code': '#MUAA.ConfirmSignUp.Code',
     'MUAA.ConfirmSignUp.Password': '#MUAA.ConfirmSignUp.Password',
     'MUAA.ConfirmSignUp.Submit': '#MUAA.ConfirmSignUp.Submit',
-    'MUAA.ConfirmSignUp.SignIn': '#MUAA.ConfirmSignUp.SignIn',
+    'MUAA.ConfirmSignUp.ResendCode': '#MUAA.ConfirmSignUp.ResendCode',
 
     'MUAA.ForgotPassword.Title': '#MUAA.ForgotPassword.Title',
     'MUAA.ForgotPassword.Email': '#MUAA.ForgotPassword.Email',
@@ -47,6 +47,7 @@ function App(): React.ReactElement {
                 }}
                 loading={false}
                 error={'SignIn.MyError'}
+                enableSignUp={true}
             />
             <hr />
             <SignUp

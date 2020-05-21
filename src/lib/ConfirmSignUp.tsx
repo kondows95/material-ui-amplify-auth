@@ -1,7 +1,8 @@
 import React, { FormEvent, ChangeEvent } from 'react';
-import { Box, Container, TextField, Link } from '@material-ui/core';
+import { Box, Container, TextField } from '@material-ui/core';
 import { useIntl } from 'react-intl';
 import FormTitle from './FormTitle';
+import MyLink from './MyLink';
 import { MyButton } from 'material-ui-basic-parts';
 import Password from './Password';
 
@@ -37,6 +38,7 @@ const ConfirmSignUp: React.FC<Props> = (props) => {
     const msgIdCode = msgId + '.Code';
     const msgIdPassword = msgId + '.Password';
     const msgIdSubmit = msgId + '.Submit';
+    const msgIdResendCode = msgId + '.ResendCode';
     const content = (
         <Container data-testid={msgId} component="main" maxWidth="xs">
             <form onSubmit={handleSubmit}>
@@ -80,9 +82,13 @@ const ConfirmSignUp: React.FC<Props> = (props) => {
                     </Box>
 
                     <Box width="100%" my={2}>
-                        <Link href="#" variant="body2" onClick={handleSubmit}>
-                            Resend code to {props.email}
-                        </Link>
+                        <MyLink
+                            label={formatMessage({
+                                id: msgIdResendCode,
+                                defaultMessage: 'Resend code to ' + props.email,
+                            })}
+                            onClick={handleSubmit}
+                        />
                     </Box>
                 </Box>
             </form>

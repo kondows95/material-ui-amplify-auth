@@ -1,7 +1,8 @@
 import React, { MouseEvent, FormEvent, ChangeEvent } from 'react';
-import { Box, Container, Link, TextField } from '@material-ui/core';
+import { Box, Container, TextField, Grid } from '@material-ui/core';
 import { useIntl } from 'react-intl';
 import FormTitle from './FormTitle';
+import MyLink from './MyLink';
 import { MyButton } from 'material-ui-basic-parts';
 import Password from './Password';
 
@@ -11,6 +12,7 @@ type Props = {
     signIn: (email: string, password: string) => void;
     loading: boolean;
     error: string;
+    enableSignUp?: boolean;
 };
 
 const SignIn: React.FC<Props> = (props) => {
@@ -35,12 +37,49 @@ const SignIn: React.FC<Props> = (props) => {
         props.changeAuthState('forgotPassword');
     };
 
+    const handleSignUp = (event: MouseEvent): void => {
+        event.preventDefault();
+        props.changeAuthState('signUp');
+    };
+
     const msgId = 'MUAA.SignIn';
     const msgIdTitle = msgId + '.Title';
     const msgIdEmail = msgId + '.Email';
     const msgIdSubmit = msgId + '.Submit';
     const msgIdPassword = msgId + '.Password';
     const msgIdForgotPassword = msgId + '.ForgotPassword';
+    const msgIdSignUp = msgId + '.SignUp';
+
+    let link = (
+        <Box mb={1} display="flex" justifyContent="center" alignItems="center">
+            <MyLink
+                label={formatMessage({ id: msgIdForgotPassword, defaultMessage: 'Forgot password?' })}
+                data-testid={msgIdForgotPassword}
+                onClick={handleForgotPassword}
+            />
+        </Box>
+    );
+    if (props.enableSignUp) {
+        link = (
+            <Grid container>
+                <Grid item xs={12}>
+                    {link}
+                </Grid>
+                <Grid item xs={12}>
+                    <Box mb={1} display="flex" justifyContent="center" alignItems="center">
+                        <MyLink
+                            label={formatMessage({
+                                id: msgIdSignUp,
+                                defaultMessage: 'No account? Create account',
+                            })}
+                            data-testid={msgIdSignUp}
+                            onClick={handleSignUp}
+                        />
+                    </Box>
+                </Grid>
+            </Grid>
+        );
+    }
 
     const content = (
         <Container component="main" maxWidth="xs">
@@ -84,9 +123,7 @@ const SignIn: React.FC<Props> = (props) => {
                         />
                     </Box>
                     <Box width="100%" my={2}>
-                        <Link data-testid={msgIdForgotPassword} href="#" variant="body2" onClick={handleForgotPassword}>
-                            {formatMessage({ id: msgIdForgotPassword, defaultMessage: 'Forgot password?' })}
-                        </Link>
+                        {link}
                     </Box>
                 </Box>
             </form>

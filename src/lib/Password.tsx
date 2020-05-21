@@ -53,7 +53,7 @@ const SignIn: React.FC<Props> = (props) => {
                         </IconButton>
                     </InputAdornment>
                 }
-                labelWidth={70}
+                label={props.label}
             />
         </FormControl>
     );

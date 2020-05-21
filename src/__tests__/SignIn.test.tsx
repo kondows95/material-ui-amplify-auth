@@ -20,6 +20,7 @@ describe('Basic Usage', () => {
         'MUAA.SignIn.Password': '#MUAA.SignIn.Password',
         'MUAA.SignIn.Submit': '#MUAA.SignIn.Submit',
         'MUAA.SignIn.ForgotPassword': '#MUAA.SignIn.ForgotPassword',
+        'MUAA.SignIn.SignUp': '#MUAA.SignIn.SignUp',
     };
     beforeEach(() => {
         tLib = new TestLib(
@@ -30,6 +31,7 @@ describe('Basic Usage', () => {
                         changeAuthState={changeAuthState}
                         signIn={signIn}
                         loading={false}
+                        enableSignUp={true}
                         error={'MyError'}
                     />
                 </IntlProvider>
@@ -37,9 +39,14 @@ describe('Basic Usage', () => {
         );
     });
 
-    it('If SignIn clicked, authState will be change.', () => {
+    it('If ForgotPassword clicked, authState will be change.', () => {
         tLib.click('MUAA.SignIn.ForgotPassword');
         expect(changeAuthState).toHaveBeenCalledWith('forgotPassword');
+    });
+
+    it('If SignUp clicked, authState will be change.', () => {
+        tLib.click('MUAA.SignIn.SignUp');
+        expect(changeAuthState).toHaveBeenCalledWith('signUp');
     });
 
     it('Click submit button', () => {
@@ -82,6 +89,7 @@ it('Default Intl labels', () => {
                     changeAuthState={changeAuthState}
                     signIn={signIn}
                     loading={true}
+                    enableSignUp={true}
                     error={''}
                 />
             </IntlProvider>
@@ -91,8 +99,25 @@ it('Default Intl labels', () => {
     expect(html).toContain('Sign In');
     expect(html).toContain('Email Address');
     expect(html).toContain('Password');
-    expect(html).toContain('Sign In');
+    expect(html).toContain('No account? Create account');
     expect(html).toContain('Forgot password?');
+});
+
+it('You can hide SignUp.', () => {
+    tLib = new TestLib(
+        (
+            <IntlProvider locale="en">
+                <SignIn
+                    authState={'signIn'}
+                    changeAuthState={changeAuthState}
+                    signIn={signIn}
+                    loading={true}
+                    error={''}
+                />
+            </IntlProvider>
+        )
+    );
+    expect(tLib.render.container.innerHTML).not.toContain('No account? Create account');
 });
 
 it('If authState is not signIn, return empty.', () => {
@@ -104,6 +129,7 @@ it('If authState is not signIn, return empty.', () => {
                     changeAuthState={changeAuthState}
                     signIn={signIn}
                     loading={true}
+                    enableSignUp={true}
                     error={''}
                 />
             </IntlProvider>

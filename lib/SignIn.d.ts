@@ -5,6 +5,7 @@ declare type Props = {
     signIn: (email: string, password: string) => void;
     loading: boolean;
     error: string;
+    enableSignUp?: boolean;
 };
 declare const SignIn: React.FC<Props>;
 export default SignIn;

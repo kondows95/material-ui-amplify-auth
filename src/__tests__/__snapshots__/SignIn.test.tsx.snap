@@ -7,17 +7,17 @@ exports[`Basic Usage Snapshot 1`] = `
   >
     <form>
       <div
-        class="MuiBox-root MuiBox-root-935"
+        class="MuiBox-root MuiBox-root-1762"
       >
         <div
-          class="MuiBox-root MuiBox-root-936"
+          class="MuiBox-root MuiBox-root-1763"
           data-testid="MUAA.SignIn.Title"
         >
           <div
-            class="MuiBox-root MuiBox-root-937"
+            class="MuiBox-root MuiBox-root-1764"
           >
             <div
-              class="MuiBox-root MuiBox-root-938"
+              class="MuiBox-root MuiBox-root-1765"
             >
               <svg
                 aria-hidden="true"
@@ -32,18 +32,18 @@ exports[`Basic Usage Snapshot 1`] = `
             </div>
           </div>
           <div
-            class="MuiBox-root MuiBox-root-948"
+            class="MuiBox-root MuiBox-root-1775"
           >
             #MUAA.SignIn.Title
           </div>
         </div>
         <div
-          class="MuiBox-root MuiBox-root-949"
+          class="MuiBox-root MuiBox-root-1776"
         >
           MyError
         </div>
         <div
-          class="MuiBox-root MuiBox-root-950"
+          class="MuiBox-root MuiBox-root-1777"
         >
           <div
             class="MuiFormControl-root MuiTextField-root MuiFormControl-fullWidth"
@@ -74,10 +74,10 @@ exports[`Basic Usage Snapshot 1`] = `
               />
               <fieldset
                 aria-hidden="true"
-                class="PrivateNotchedOutline-root-1009 MuiOutlinedInput-notchedOutline"
+                class="PrivateNotchedOutline-root-1836 MuiOutlinedInput-notchedOutline"
               >
                 <legend
-                  class="PrivateNotchedOutline-legendLabelled-1011"
+                  class="PrivateNotchedOutline-legendLabelled-1838"
                 >
                   <span>
                     #MUAA.SignIn.Email *
@@ -88,7 +88,7 @@ exports[`Basic Usage Snapshot 1`] = `
           </div>
         </div>
         <div
-          class="MuiBox-root MuiBox-root-1013"
+          class="MuiBox-root MuiBox-root-1840"
         >
           <div
             class="MuiFormControl-root MuiFormControl-fullWidth"
@@ -151,15 +151,13 @@ exports[`Basic Usage Snapshot 1`] = `
               </div>
               <fieldset
                 aria-hidden="true"
-                class="PrivateNotchedOutline-root-1009 MuiOutlinedInput-notchedOutline"
-                style="padding-left: 8px;"
+                class="PrivateNotchedOutline-root-1836 MuiOutlinedInput-notchedOutline"
               >
                 <legend
-                  class="PrivateNotchedOutline-legend-1010"
-                  style="width: 0.01px;"
+                  class="PrivateNotchedOutline-legendLabelled-1838"
                 >
                   <span>
-                    ​
+                    #MUAA.SignIn.Password
                   </span>
                 </legend>
               </fieldset>
@@ -167,7 +165,7 @@ exports[`Basic Usage Snapshot 1`] = `
           </div>
         </div>
         <div
-          class="MuiBox-root MuiBox-root-1033 relative"
+          class="MuiBox-root MuiBox-root-1860 relative"
         >
           <button
             class="MuiButtonBase-root MuiButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-fullWidth"
@@ -186,15 +184,50 @@ exports[`Basic Usage Snapshot 1`] = `
           </button>
         </div>
         <div
-          class="MuiBox-root MuiBox-root-1064"
+          class="MuiBox-root MuiBox-root-1891"
         >
-          <a
-            class="MuiTypography-root MuiLink-root MuiLink-underlineHover MuiTypography-body2 MuiTypography-colorPrimary"
-            data-testid="MUAA.SignIn.ForgotPassword"
-            href="#"
+          <div
+            class="MuiGrid-root MuiGrid-container"
           >
-            #MUAA.SignIn.ForgotPassword
-          </a>
+            <div
+              class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12"
+            >
+              <div
+                class="MuiBox-root MuiBox-root-1995"
+              >
+                <div
+                  class="MuiBox-root MuiBox-root-1996"
+                >
+                  <a
+                    class="MuiTypography-root MuiLink-root MuiLink-underlineHover MuiTypography-body2 MuiTypography-colorPrimary"
+                    data-testid="MUAA.SignIn.ForgotPassword"
+                    href="#"
+                  >
+                    #MUAA.SignIn.ForgotPassword
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div
+              class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12"
+            >
+              <div
+                class="MuiBox-root MuiBox-root-2033"
+              >
+                <div
+                  class="MuiBox-root MuiBox-root-2034"
+                >
+                  <a
+                    class="MuiTypography-root MuiLink-root MuiLink-underlineHover MuiTypography-body2 MuiTypography-colorPrimary"
+                    data-testid="MUAA.SignIn.SignUp"
+                    href="#"
+                  >
+                    #MUAA.SignIn.SignUp
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </form>

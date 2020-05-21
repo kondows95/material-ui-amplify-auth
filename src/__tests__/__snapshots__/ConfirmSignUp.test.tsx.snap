@@ -8,17 +8,17 @@ exports[`Basic Usage Snapshot 1`] = `
   >
     <form>
       <div
-        class="MuiBox-root MuiBox-root-565"
+        class="MuiBox-root MuiBox-root-568"
       >
         <div
-          class="MuiBox-root MuiBox-root-566"
+          class="MuiBox-root MuiBox-root-569"
           data-testid="MUAA.ConfirmSignUp.Title"
         >
           <div
-            class="MuiBox-root MuiBox-root-567"
+            class="MuiBox-root MuiBox-root-570"
           >
             <div
-              class="MuiBox-root MuiBox-root-568"
+              class="MuiBox-root MuiBox-root-571"
             >
               <svg
                 aria-hidden="true"
@@ -33,18 +33,18 @@ exports[`Basic Usage Snapshot 1`] = `
             </div>
           </div>
           <div
-            class="MuiBox-root MuiBox-root-578"
+            class="MuiBox-root MuiBox-root-581"
           >
             #MUAA.ConfirmSignUp.Title
           </div>
         </div>
         <div
-          class="MuiBox-root MuiBox-root-579"
+          class="MuiBox-root MuiBox-root-582"
         >
           MyError
         </div>
         <div
-          class="MuiBox-root MuiBox-root-580"
+          class="MuiBox-root MuiBox-root-583"
         >
           <div
             class="MuiFormControl-root MuiTextField-root MuiFormControl-fullWidth"
@@ -74,10 +74,10 @@ exports[`Basic Usage Snapshot 1`] = `
               />
               <fieldset
                 aria-hidden="true"
-                class="PrivateNotchedOutline-root-639 MuiOutlinedInput-notchedOutline"
+                class="PrivateNotchedOutline-root-642 MuiOutlinedInput-notchedOutline"
               >
                 <legend
-                  class="PrivateNotchedOutline-legendLabelled-641"
+                  class="PrivateNotchedOutline-legendLabelled-644"
                 >
                   <span>
                     #MUAA.ConfirmSignUp.Code *
@@ -88,7 +88,7 @@ exports[`Basic Usage Snapshot 1`] = `
           </div>
         </div>
         <div
-          class="MuiBox-root MuiBox-root-643"
+          class="MuiBox-root MuiBox-root-646"
         >
           <div
             class="MuiFormControl-root MuiFormControl-fullWidth"
@@ -151,15 +151,13 @@ exports[`Basic Usage Snapshot 1`] = `
               </div>
               <fieldset
                 aria-hidden="true"
-                class="PrivateNotchedOutline-root-639 MuiOutlinedInput-notchedOutline"
-                style="padding-left: 8px;"
+                class="PrivateNotchedOutline-root-642 MuiOutlinedInput-notchedOutline"
               >
                 <legend
-                  class="PrivateNotchedOutline-legend-640"
-                  style="width: 0.01px;"
+                  class="PrivateNotchedOutline-legendLabelled-644"
                 >
                   <span>
-                    ​
+                    #MUAA.ConfirmSignUp.Password
                   </span>
                 </legend>
               </fieldset>
@@ -167,7 +165,7 @@ exports[`Basic Usage Snapshot 1`] = `
           </div>
         </div>
         <div
-          class="MuiBox-root MuiBox-root-663 relative"
+          class="MuiBox-root MuiBox-root-666 relative"
         >
           <button
             class="MuiButtonBase-root MuiButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-fullWidth"
@@ -186,14 +184,18 @@ exports[`Basic Usage Snapshot 1`] = `
           </button>
         </div>
         <div
-          class="MuiBox-root MuiBox-root-694"
+          class="MuiBox-root MuiBox-root-697"
         >
-          <a
-            class="MuiTypography-root MuiLink-root MuiLink-underlineHover MuiTypography-body2 MuiTypography-colorPrimary"
-            href="#"
+          <div
+            class="MuiBox-root MuiBox-root-698"
           >
-            Resend code to test@example.com
-          </a>
+            <a
+              class="MuiTypography-root MuiLink-root MuiLink-underlineHover MuiTypography-body2 MuiTypography-colorPrimary"
+              href="#"
+            >
+              Resend code to test@example.com
+            </a>
+          </div>
         </div>
       </div>
     </form>
