@@ -88,10 +88,10 @@ it('Default Intl labels', () => {
         )
     );
     const html = tLib.render.container.innerHTML;
-    expect(html).toContain('Sign In');
+    expect(html).toContain('Sign Up');
     expect(html).toContain('Email Address');
     expect(html).toContain('Password');
-    expect(html).toContain('Sign In');
+    expect(html).toContain('Sign Up');
     expect(html).toContain('Already have an account? Sign in');
 });
 

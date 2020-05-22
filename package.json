@@ -1,6 +1,6 @@
 {
   "name": "material-ui-amplify-auth",
-  "version": "0.0.8",
+  "version": "0.0.9",
   "license": "MIT",
   "repository": {
     "type": "git",
@@ -69,5 +69,10 @@
     "lib"
   ],
   "main": "lib/index.js",
-  "types": "lib/index.d.ts"
+  "types": "lib/index.d.ts",
+  "jest": {
+    "collectCoverageFrom": [
+      "src/lib/**/*"
+    ]
+  }
 }

@@ -10,6 +10,7 @@ type Props = {
     authState: string | null;
     changeAuthState: (state: string) => void;
     confirmSignUp: (email: string, confirmationCode: string) => void;
+    resendSignUp: (email: string) => void;
     loading: boolean;
     error: string;
     email: string;
@@ -31,6 +32,11 @@ const ConfirmSignUp: React.FC<Props> = (props) => {
     const handleSubmit = (event: FormEvent): void => {
         event.preventDefault();
         props.confirmSignUp(props.email, form['confirmationCode']);
+    };
+
+    const handleResendCode = (event: MouseEvent): void => {
+        event.preventDefault();
+        props.resendSignUp(props.email)
     };
 
     const msgId = 'MUAA.ConfirmSignUp';
@@ -87,7 +93,8 @@ const ConfirmSignUp: React.FC<Props> = (props) => {
                                 id: msgIdResendCode,
                                 defaultMessage: 'Resend code to ' + props.email,
                             })}
-                            onClick={handleSubmit}
+                            data-testid={msgIdResendCode}
+                            onClick={handleResendCode}
                         />
                     </Box>
                 </Box>

@@ -7,10 +7,12 @@ import ConfirmSignUp from '../lib/ConfirmSignUp';
 let tLib: TestLib;
 let changeAuthState: jest.Mock;
 let confirmSignUp: jest.Mock;
+let resendSignUp: jest.Mock;
 
 beforeEach(() => {
     changeAuthState = jest.fn();
     confirmSignUp = jest.fn();
+    resendSignUp = jest.fn();
 });
 
 describe('Basic Usage', () => {
@@ -19,6 +21,7 @@ describe('Basic Usage', () => {
         'MUAA.ConfirmSignUp.Code': '#MUAA.ConfirmSignUp.Code',
         'MUAA.ConfirmSignUp.Password': '#MUAA.ConfirmSignUp.Password',
         'MUAA.ConfirmSignUp.Submit': '#MUAA.ConfirmSignUp.Submit',
+        'MUAA.ConfirmSignUp.ResendCode': '#MUAA.ConfirmSignUp.ResendCode',
     };
     beforeEach(() => {
         tLib = new TestLib(
@@ -28,6 +31,7 @@ describe('Basic Usage', () => {
                         authState={'confirmSignUp'}
                         changeAuthState={changeAuthState}
                         confirmSignUp={confirmSignUp}
+                        resendSignUp={resendSignUp}
                         loading={false}
                         error={'MyError'}
                         email={'test@example.com'}
@@ -44,12 +48,18 @@ describe('Basic Usage', () => {
         expect(confirmSignUp).toHaveBeenCalledWith('test@example.com', '12345');
     });
 
+    it('You can resend code', () => {
+        tLib.click('MUAA.ConfirmSignUp.ResendCode');
+        expect(resendSignUp).toHaveBeenCalledWith('test@example.com');
+    });
+
     it('You can set label by Intl', () => {
         const html = tLib.render.container.innerHTML;
         expect(html).toContain('#MUAA.ConfirmSignUp.Title');
         expect(html).toContain('#MUAA.ConfirmSignUp.Code');
         expect(html).toContain('#MUAA.ConfirmSignUp.Password');
         expect(html).toContain('#MUAA.ConfirmSignUp.Submit');
+        expect(html).toContain('#MUAA.ConfirmSignUp.ResendCode');
     });
 
     it('You can set error message', () => {
@@ -69,6 +79,7 @@ it('Defalt Intl labels', () => {
                     authState={'confirmSignUp'}
                     changeAuthState={changeAuthState}
                     confirmSignUp={confirmSignUp}
+                    resendSignUp={resendSignUp}
                     loading={false}
                     error={''}
                     email={'test@example.com'}
@@ -92,6 +103,7 @@ it('If authState is not forgotPasswordReset, return empty.', () => {
                     authState={'forgotPassword'}
                     changeAuthState={changeAuthState}
                     confirmSignUp={confirmSignUp}
+                    resendSignUp={resendSignUp}
                     loading={false}
                     error={''}
                     email={'test@example.com'}

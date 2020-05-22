@@ -7,9 +7,10 @@ import { FormTitle, SignIn, SignUp, ConfirmSignUp, ForgotPassword, ForgotPasswor
 const msgs = {
     'MUAA.SignIn.Title': '#MUAA.SignIn.Title',
     'MUAA.SignIn.Email': '#MUAA.SignIn.Email',
-    'MUAA.SignIn.Password': '#MUAA.SignIn.Password',
     'MUAA.SignIn.Submit': '#MUAA.SignIn.Submit',
+    'MUAA.SignIn.Password': '#MUAA.SignIn.Password',
     'MUAA.SignIn.ForgotPassword': '#MUAA.SignIn.ForgotPassword',
+    'MUAA.SignIn.SignUp': '#MUAA.SignIn.SignUp',
 
     'MUAA.SignUp.Title': '#MUAA.SignUp.Title',
     'MUAA.SignUp.Email': '#MUAA.SignUp.Email',
@@ -68,7 +69,10 @@ function App(): React.ReactElement {
                     console.log('SignUp.changeAuthState(' + state + ')');
                 }}
                 confirmSignUp={(email: string, code: string): void => {
-                    console.log('signUp(' + email + ',' + code + ')');
+                    console.log('confirmSignUp(' + email + ',' + code + ')');
+                }}
+                resendSignUp={(email: string): void => {
+                    console.log('resendSignUp(' + email + ')');
                 }}
                 loading={false}
                 error={'confirmSignUp.MyError'}

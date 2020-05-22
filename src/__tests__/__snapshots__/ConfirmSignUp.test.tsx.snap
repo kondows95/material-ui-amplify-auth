@@ -8,17 +8,17 @@ exports[`Basic Usage Snapshot 1`] = `
   >
     <form>
       <div
-        class="MuiBox-root MuiBox-root-568"
+        class="MuiBox-root MuiBox-root-754"
       >
         <div
-          class="MuiBox-root MuiBox-root-569"
+          class="MuiBox-root MuiBox-root-755"
           data-testid="MUAA.ConfirmSignUp.Title"
         >
           <div
-            class="MuiBox-root MuiBox-root-570"
+            class="MuiBox-root MuiBox-root-756"
           >
             <div
-              class="MuiBox-root MuiBox-root-571"
+              class="MuiBox-root MuiBox-root-757"
             >
               <svg
                 aria-hidden="true"
@@ -33,18 +33,18 @@ exports[`Basic Usage Snapshot 1`] = `
             </div>
           </div>
           <div
-            class="MuiBox-root MuiBox-root-581"
+            class="MuiBox-root MuiBox-root-767"
           >
             #MUAA.ConfirmSignUp.Title
           </div>
         </div>
         <div
-          class="MuiBox-root MuiBox-root-582"
+          class="MuiBox-root MuiBox-root-768"
         >
           MyError
         </div>
         <div
-          class="MuiBox-root MuiBox-root-583"
+          class="MuiBox-root MuiBox-root-769"
         >
           <div
             class="MuiFormControl-root MuiTextField-root MuiFormControl-fullWidth"
@@ -74,10 +74,10 @@ exports[`Basic Usage Snapshot 1`] = `
               />
               <fieldset
                 aria-hidden="true"
-                class="PrivateNotchedOutline-root-642 MuiOutlinedInput-notchedOutline"
+                class="PrivateNotchedOutline-root-828 MuiOutlinedInput-notchedOutline"
               >
                 <legend
-                  class="PrivateNotchedOutline-legendLabelled-644"
+                  class="PrivateNotchedOutline-legendLabelled-830"
                 >
                   <span>
                     #MUAA.ConfirmSignUp.Code *
@@ -88,7 +88,7 @@ exports[`Basic Usage Snapshot 1`] = `
           </div>
         </div>
         <div
-          class="MuiBox-root MuiBox-root-646"
+          class="MuiBox-root MuiBox-root-832"
         >
           <div
             class="MuiFormControl-root MuiFormControl-fullWidth"
@@ -151,10 +151,10 @@ exports[`Basic Usage Snapshot 1`] = `
               </div>
               <fieldset
                 aria-hidden="true"
-                class="PrivateNotchedOutline-root-642 MuiOutlinedInput-notchedOutline"
+                class="PrivateNotchedOutline-root-828 MuiOutlinedInput-notchedOutline"
               >
                 <legend
-                  class="PrivateNotchedOutline-legendLabelled-644"
+                  class="PrivateNotchedOutline-legendLabelled-830"
                 >
                   <span>
                     #MUAA.ConfirmSignUp.Password
@@ -165,7 +165,7 @@ exports[`Basic Usage Snapshot 1`] = `
           </div>
         </div>
         <div
-          class="MuiBox-root MuiBox-root-666 relative"
+          class="MuiBox-root MuiBox-root-852 relative"
         >
           <button
             class="MuiButtonBase-root MuiButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-fullWidth"
@@ -184,16 +184,17 @@ exports[`Basic Usage Snapshot 1`] = `
           </button>
         </div>
         <div
-          class="MuiBox-root MuiBox-root-697"
+          class="MuiBox-root MuiBox-root-883"
         >
           <div
-            class="MuiBox-root MuiBox-root-698"
+            class="MuiBox-root MuiBox-root-884"
           >
             <a
               class="MuiTypography-root MuiLink-root MuiLink-underlineHover MuiTypography-body2 MuiTypography-colorPrimary"
+              data-testid="MUAA.ConfirmSignUp.ResendCode"
               href="#"
             >
-              Resend code to test@example.com
+              #MUAA.ConfirmSignUp.ResendCode
             </a>
           </div>
         </div>

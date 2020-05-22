@@ -3,6 +3,7 @@ declare type Props = {
     authState: string | null;
     changeAuthState: (state: string) => void;
     confirmSignUp: (email: string, confirmationCode: string) => void;
+    resendSignUp: (email: string) => void;
     loading: boolean;
     error: string;
     email: string;
